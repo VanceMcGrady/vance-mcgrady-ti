@@ -3,5 +3,11 @@ import { getPostsForMe } from "../actions/getPostsForMe";
 export default async function Feed() {
   const posts = await getPostsForMe();
   console.log("posts: ", posts);
-  return <div>Feed</div>;
+  return (
+    <div>
+      {posts?.map((post) => {
+        return <p>{post.text}</p>;
+      })}
+    </div>
+  );
 }
