@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## start here
 
-## Getting Started
+You will be able to get this app started locally with npm run dev
 
-First, run the development server:
+## notes on basic approach
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+There were a lot of trade-offs to make in the interest of keeping this to a limited amount of time to stand this up
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Styling is very basic ("Style might be an overstatement) - I figured that it was best to demonstrate a broad understanding of Next.js and
+demonstrating my style and decicions in how to handle the basic architecture of a small app. I did not want to get bogged down nitpicking CSS
+so I kept it very striaghtforward.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Also in the interest of time, I didn't stand up a db or any any deployment infrastructure for this app. The instructions said to use mock data/api calls,
+and so I made the assumption that it wouldn't count against me if I didn't have an actual "backend". As a result of that, the "mock API calls" are very lean.
+I use them in this case to simply return the mock data I created. I was tempted to try to squeeze in a vercel/postgres db so that I could get one layer closer to
+demonstrating a more realistic API function, but I didn't want to potentially get bogged down with all of that. I would've had to make tables and schema and it
+would not have fit well into the scope of this exercise.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The prompt mentioned the use of "data structures" for the mock data. I used very basic object literals and arrays. In reality, the data would be in e.g.
+a postgres database which has much more effective structures for storing and retreiving that data. I opted not to overcomplicate the mock-data part of this
+by trying to maximize performance on this really small dataset. I sincerely hope that I was able to demonstrate my problem-solving style elsewhere in the app
+and that my decision to do it like this makes sense in this context.
 
-## Learn More
+I did not stand up any logic for dealing with state, except for a very basic useState hook to help toggle the "Details" of the posts in the /feed route.
+I was afraid of running into problems if I tried to make the app seem more complicated than it really is.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Additionally, I felt that it made logical sense to have the root "/" redirect to "/feed". To me, it made sense to keep the functionality consistent with the route names,
+and in this app we only needed "Feed" and "Profile" pages, so those are the only two routes, with "/feed" being home base.
