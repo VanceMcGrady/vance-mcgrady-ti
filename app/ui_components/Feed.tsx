@@ -7,7 +7,7 @@ export default async function Feed() {
   return (
     <div>
       {posts?.map((post) => {
-        return <FeedCard key={Math.random() * 10} />;
+        return <FeedCard post={post} key={post.id} />;
       })}
     </div>
   );
