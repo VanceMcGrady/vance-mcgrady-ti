@@ -6,7 +6,7 @@ import { Post } from "../mock_data/data";
 type FeedCardProps = { post: Post; key: number };
 
 export default function FeedCard({ post, key }: FeedCardProps) {
-  const [detialView, setDetailView] = React.useState(false);
+  const [detailView, setDetailView] = React.useState(false);
 
   return (
     <>
@@ -14,21 +14,22 @@ export default function FeedCard({ post, key }: FeedCardProps) {
         <h4>{post.user}</h4>
         <p>{post.text}</p>
         <div>
-          {detialView && (
+          {detailView && (
             <div className="flex flex-row font-size-small gap-x-1">
               <p>Likes: {post.likes}</p>
               <p>Date: {post.date}</p>
               <p>Time: {post.time}</p>
             </div>
           )}
-          <button
-            onClick={(e) => {
-              setDetailView(!detialView);
-            }}
-          >
-            Details
-          </button>
         </div>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={(e) => {
+            setDetailView(!detailView);
+          }}
+        >
+          Details
+        </button>
       </div>
     </>
   );
