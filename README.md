@@ -17,8 +17,9 @@ demonstrating a more realistic API function, but I didn't want to potentially ge
 would not have fit well into the scope of this exercise.
 
 The prompt mentioned the use of "data structures" for the mock data. I used very basic object literals and arrays. In reality, the data would be in e.g.
-a postgres database which has much more effective structures for storing and retreiving that data. I opted not to overcomplicate the mock-data part of this
-by trying to maximize performance on this really small dataset. I sincerely hope that I was able to demonstrate my problem-solving style elsewhere in the app
+a postgres database which has much more effective structures for storing and retreiving that data than it would be reasonable to try to emulate here.
+I opted not to overcomplicate the mock-data part of this by trying to maximize performance on this really small dataset.
+I sincerely hope that I was able to demonstrate my problem-solving style elsewhere in the app
 and that my decision to do it like this makes sense in this context.
 
 I did not stand up any logic for dealing with state, except for a very basic useState hook to help toggle the "Details" of the posts in the /feed route.
@@ -26,3 +27,8 @@ I was afraid of running into problems if I tried to make the app seem more compl
 
 Additionally, I felt that it made logical sense to have the root "/" redirect to "/feed". To me, it made sense to keep the functionality consistent with the route names,
 and in this app we only needed "Feed" and "Profile" pages, so those are the only two routes, with "/feed" being home base.
+
+The Typescript is also very primative. This was another thing that I didn't want to get too in the weeds about as I think it does little in the way of
+demonstrating my "style".
+
+That's all I have!
