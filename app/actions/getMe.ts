@@ -2,7 +2,7 @@
 
 import { error } from "console";
 import { me } from "../mock_data/data";
-export default async function getMe() {
+export async function getMe() {
   // fetch my own user data
   try {
     return me;
