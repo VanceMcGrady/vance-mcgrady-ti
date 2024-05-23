@@ -7,14 +7,14 @@ export default async function Profile() {
   const me = await getMe();
 
   return (
-    <div>
-      <div>
-        <h3>{me?.name}</h3>
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center p-5 my-10 width-auto min-w-[80%] max-w-[80%] border-2 border-indigo-100 rounded">
+        <h3 className="text-xl">{me?.name}</h3>
         <p>bio: {me?.about}</p>
         <p>Birdthday: {me?.birthday}</p>
       </div>
-      <div>
-        <h3>Friends</h3>
+      <div className="flex flex-col justify-center items-center p-5 my-10 min-w-[80%]  max-w-[80%] border-2 border-indigo-100 rounded">
+        <h3 className="text-xl ">Friends</h3>
         {me?.friends.map((friend) => {
           return <div key={Math.random() * 10}>{friend}</div>;
         })}
