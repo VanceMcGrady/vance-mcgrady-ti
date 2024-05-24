@@ -1,7 +1,7 @@
 import React from "react";
 import { getMe } from "../actions/getMe";
 
-export default async function Profile() {
+export default async function Profile({ user_id }: { user_id: string }) {
   // ordinarily, this data would already be cached and present and we wouldn't have to refetch the data
   // every time Profile renders.
   const me = await getMe();
