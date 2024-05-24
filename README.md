@@ -33,6 +33,6 @@ demonstrating my "style".
 
 ** one last thing **
 I added another few commits this morning. I woke up realizing that I hadn't demonstrated dynamic routing and that I think that is important. I spent 20ish minutes on it just to have a basic example.
-Subtracting the time I spent writing out this README, I'd say this is still indicative of two hours of work, give or take a few minutes.
+Subtracting the time I spent writing out this README, I'd say this is still indicative of two hours of work, give or take a few minutes. 
 
 That's all I have!
